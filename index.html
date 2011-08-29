@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+	<title>Tarot</title>
+
+	<link type="text/css" rel="stylesheet" href="css/layout.css" />
+	<link type="text/css" rel="stylesheet" href="css/application.css" />
+	<style type="text/css">
+	html, body {
+		width:		100%;
+		height:		100%;					
+		padding:	0;
+		margin:		0;
+		overflow:	auto; /* when page gets too small for container min-width/height */
+		background-color:transparent;
+	}
+	#container {
+		min-height:	300px;
+		min-width:	600px;
+		position:	absolute;
+		top:		0px;	/* margins in pixels */
+		bottom:		0px;	/* could also use a percent */
+		left:		0px;
+		right:		0px;
+	}
+	.pane {
+		display:	none; /* will appear when layout inits */
+	}
+	</style>
+
+	<script type="text/javascript" src="javascripts/jquery-1.6.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.ui.1.8.10.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.layout-latest.js"></script>
+	
+	<!--notification stuff -->
+	<link type="text/css" rel="stylesheet" href="css/ui.notify.css">
+	<script src="javascripts/jquery.notify.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+
+	$(document).ready(function () {
+		$('#container').layout({
+			applyDefaultStyles: false,
+			west: {
+				resizable: true,
+				collapsable: false,
+				size: 250
+			},		
+		});
+		
+		$container = $("#notifications").notify();
+	});
+	</script>
+	
+	<script src="lib/json2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/jquery.link.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="lib/spine.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/spine.list.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/spine.model.local.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/spine.model.filter.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="app/utils.js" type="text/javascript" charset="utf-8"></script>
+	<script src="app/models/card.js" type="text/javascript" charset="utf-8"></script>
+	<script src="app/controllers/sidebarcards.js" type="text/javascript" charset="utf-8"></script>
+	<script src="app/controllers/cards.js" type="text/javascript" charset="utf-8"></script>
+	<script src="app/application.js" type="text/javascript" charset="utf-8"></script>
+
+  <script type="text/x-jquery-tmpl" id="cardsTemplate">
+    <li class="item">
+      <img src="${image}" />
+      {{if name}}
+        <span class="name">${name}</span>
+      {{else}}
+        <span class="name empty">No Name</span>
+      {{/if}}
+    </li>
+  </script> 
+
+  <script type="text/x-jquery-tmpl" id="cardTemplate">
+	<p>TEsting</p>
+  </script> 
+
+</head>
+<body>
+<div id="container">
+	<div class="pane ui-layout-center" style="">
+	  	<div id="contacts"></div>
+	  	
+	</div>
+	<div class="pane ui-layout-west">
+		<div id="sidebar">		
+			<div class="search">
+		      <input type="search" placeholder="Search" results="0" incremental="true" autofocus>
+		    </div>
+		    
+			<ul class="items">
+    		</ul>
+		    
+		    <footer>
+		      <button>New contact</button>
+		    </footer>
+	     </div>
+	</div>
+	
+	<!--- container to hold notifications, and default templates --->
+	<div id="notifications" style="display:none">
+
+		<div id="default">
+			<h1>#{title}</h1>
+			<p>#{text}</p>
+		</div>
+
+		<div id="sticky">
+			<a class="ui-notify-close ui-notify-cross" href="#">x</a>
+			<h1>#{title}</h1>
+			<p>#{text}</p>
+		</div>
+
+		<div id="withIcon">
+			<a class="ui-notify-close ui-notify-cross" href="#">x</a>
+			<div style="float:left;margin:0 10px 0 0"><img src="#{icon}" alt="warning" /></div>
+			<h1>#{title}</h1>
+			<p>#{text}</p>
+		</div>
+
+		<div id="buttons">
+			<h1>#{title}</h1>
+			<p>#{text}</p>
+			<p style="margin-top:10px;text-align:center">
+				<input type="button" class="confirm" value="Close Dialog" />
+			</p>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
