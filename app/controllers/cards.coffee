@@ -14,6 +14,6 @@ jQuery ($) ->
       @render()
     
     render: ->
-      @showContent.html $("#cardTemplate").tmpl(@current)
+      @el.html $("#cardTemplate").tmpl(@current)
     
   )

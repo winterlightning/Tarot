@@ -16,7 +16,7 @@
         return this.render();
       },
       render: function() {
-        return this.showContent.html($("#cardTemplate").tmpl(this.current));
+        return this.el.html($("#cardTemplate").tmpl(this.current));
       }
     });
   });
