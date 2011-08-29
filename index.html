@@ -28,6 +28,9 @@
 	.pane {
 		display:	none; /* will appear when layout inits */
 	}
+	.ui-layout-center {
+		background: url('css/images/bamboo1_tile.jpg') !important;
+	}
 	</style>
 
 	<script type="text/javascript" src="javascripts/jquery-1.6.min.js"></script>
@@ -81,7 +84,10 @@
   </script> 
 
   <script type="text/x-jquery-tmpl" id="cardTemplate">
-	<p>${name}</p>
+	<img src="${image}" class="cardimage" style="width: 300px; padding: 10px; background-color: #eee; margin: 10px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);" />
+  	<div class="description" style="background-color: #000; Opacity: 0.7; color: #eee; margin: 10px; padding: 3px 10px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+  		<p>${description}</p>
+  	</div>
   </script> 
 
 </head>
