@@ -7,6 +7,7 @@
 
 	<link type="text/css" rel="stylesheet" href="css/layout.css" />
 	<link type="text/css" rel="stylesheet" href="css/application.css" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 	<style type="text/css">
 	html, body {
 		width:		100%;
@@ -84,10 +85,16 @@
   </script> 
 
   <script type="text/x-jquery-tmpl" id="cardTemplate">
-	<img src="${image}" class="cardimage" style="width: 300px; padding: 10px; background-color: #eee; margin: 10px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);" />
-  	<div class="description" style="background-color: #000; Opacity: 0.7; color: #eee; margin: 10px; padding: 3px 10px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+	<img src="${image}" class="cardimage" style="width: 300px; padding: 10px; background-color: #eee; margin: 10px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); position: absolute; top: 10px;" />
+  	<div class="description" style="background-color: #000; Opacity: 0.7; color: #eee; margin: 10px; padding: 3px 15px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); margin-left: 350px; margin-top: 20px;">
+		<div class="page-header" style="margin-top: 8px"><h1 style="color: #eee; font-weight: normal">${name}</h1></div>
   		<p>${description}</p>
   	</div>
+  	<div class="interpretation" style="background-color: #000; Opacity: 0.7; color: #eee; margin: 10px; padding: 3px 15px; -webkit-border-radius: 7px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); margin-left: 350px; margin-top: 20px;">
+		<div class="page-header" style="margin-top: 8px"><h1 style="color: #eee; font-weight: normal">Interpretation</h1></div>
+  		<p>${interpretation}</p>
+  	</div>
+  	
   </script> 
 
 </head>
@@ -107,7 +114,13 @@
     		</ul>
 		    
 		    <footer>
-		      <button>New contact</button>
+		      <!-- <ul class="pills">
+				  <li class="active"><a href="#">M</a></li>
+				  <li><a href="#">W</a></li>
+				  <li><a href="#">P</a></li>
+				  <li><a href="#">C</a></li>
+				  <li><a href="#">S</a></li>
+				</ul> -->
 		    </footer>
 	     </div>
 	</div>
