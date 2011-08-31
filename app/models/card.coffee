@@ -104,25 +104,46 @@ interpretation: "Assured success, recompense, voyage, route, emigration, flight,
 
 numeralize = (x) ->
   switch x
-    when 1 then return "ace"
-    when 2 then return "two"
-    when 3 then return "three"
-    when 4 then return "four"
-    when 5 then return "five"
-    when 6 then return "six"
-    when 7 then return "seven"
-    when 8 then return "eight"
-    when 9 then return "nine"
-    when 10 then return "ten"
-    when 11 then return "page"
-    when 12 then return "knight"
-    when 13 then return "queen"
-    when 14 then return "king"
+    when 1 then return "Ace"
+    when 2 then return "Two"
+    when 3 then return "Three"
+    when 4 then return "Four"
+    when 5 then return "Five"
+    when 6 then return "Six"
+    when 7 then return "Seven"
+    when 8 then return "Eight"
+    when 9 then return "Nine"
+    when 10 then return "Ten"
+    when 11 then return "Page"
+    when 12 then return "Knight"
+    when 13 then return "Queen"
+    when 14 then return "King"
 
 #minor aaraca
 for number in [1..14]
   do (number) ->
     image_string = if number < 10 then '0'+ number.toString() else number.toString()
-    Card.create { name: number, suite: "cups", image: 'deck/Cups'+image_string + '.jpg',
+    Card.create { name: numeralize(number)+ " of Cups", suite: "cups", image: 'deck/Cups'+image_string + '.jpg',
+    description: "test",
+    interpretation: "test" }
+
+for number in [1..14]
+  do (number) ->
+    image_string = if number < 10 then '0'+ number.toString() else number.toString()
+    Card.create { name: numeralize(number)+ " of Wands", suite: "cups", image: 'deck/Wands'+image_string + '.jpg',
+    description: "test",
+    interpretation: "test" }
+    
+for number in [1..14]
+  do (number) ->
+    image_string = if number < 10 then '0'+ number.toString() else number.toString()
+    Card.create { name: numeralize(number)+ " of Swords", suite: "swords", image: 'deck/Swords'+image_string + '.jpg',
+    description: "test",
+    interpretation: "test" }
+
+for number in [1..14]
+  do (number) ->
+    image_string = if number < 10 then '0'+ number.toString() else number.toString()
+    Card.create { name: numeralize(number)+ " of Pentacle", suite: "pentacle", image: 'deck/Pents'+image_string + '.jpg',
     description: "test",
     interpretation: "test" }

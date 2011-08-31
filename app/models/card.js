@@ -1,5 +1,5 @@
 (function() {
-  var Card, exports, number, numeralize, _fn;
+  var Card, exports, number, numeralize, _fn, _fn2, _fn3, _fn4;
   Card = Spine.Model.setup("Card", ["name", "suite", "image", "interpretation", "description"]);
   Card.extend(Spine.Model.Local);
   Card.extend(Spine.Model.Filter);
@@ -176,40 +176,40 @@
   numeralize = function(x) {
     switch (x) {
       case 1:
-        return "ace";
+        return "Ace";
       case 2:
-        return "two";
+        return "Two";
       case 3:
-        return "three";
+        return "Three";
       case 4:
-        return "four";
+        return "Four";
       case 5:
-        return "five";
+        return "Five";
       case 6:
-        return "six";
+        return "Six";
       case 7:
-        return "seven";
+        return "Seven";
       case 8:
-        return "eight";
+        return "Eight";
       case 9:
-        return "nine";
+        return "Nine";
       case 10:
-        return "ten";
+        return "Ten";
       case 11:
-        return "page";
+        return "Page";
       case 12:
-        return "knight";
+        return "Knight";
       case 13:
-        return "queen";
+        return "Queen";
       case 14:
-        return "king";
+        return "King";
     }
   };
   _fn = function(number) {
     var image_string;
     image_string = number < 10 ? '0' + number.toString() : number.toString();
     return Card.create({
-      name: number,
+      name: numeralize(number) + " of Cups",
       suite: "cups",
       image: 'deck/Cups' + image_string + '.jpg',
       description: "test",
@@ -218,5 +218,47 @@
   };
   for (number = 1; number <= 14; number++) {
     _fn(number);
+  }
+  _fn2 = function(number) {
+    var image_string;
+    image_string = number < 10 ? '0' + number.toString() : number.toString();
+    return Card.create({
+      name: numeralize(number) + " of Wands",
+      suite: "cups",
+      image: 'deck/Wands' + image_string + '.jpg',
+      description: "test",
+      interpretation: "test"
+    });
+  };
+  for (number = 1; number <= 14; number++) {
+    _fn2(number);
+  }
+  _fn3 = function(number) {
+    var image_string;
+    image_string = number < 10 ? '0' + number.toString() : number.toString();
+    return Card.create({
+      name: numeralize(number) + " of Swords",
+      suite: "swords",
+      image: 'deck/Swords' + image_string + '.jpg',
+      description: "test",
+      interpretation: "test"
+    });
+  };
+  for (number = 1; number <= 14; number++) {
+    _fn3(number);
+  }
+  _fn4 = function(number) {
+    var image_string;
+    image_string = number < 10 ? '0' + number.toString() : number.toString();
+    return Card.create({
+      name: numeralize(number) + " of Pentacle",
+      suite: "pentacle",
+      image: 'deck/Pents' + image_string + '.jpg',
+      description: "test",
+      interpretation: "test"
+    });
+  };
+  for (number = 1; number <= 14; number++) {
+    _fn4(number);
   }
 }).call(this);
