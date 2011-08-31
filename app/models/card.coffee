@@ -102,5 +102,27 @@ Card.create { name: "World", suite: "major", image: "deck/RWS_Tarot_21_World.jpg
 description: "As this final message of the Major Trumps is unchanged--and indeed unchangeable--in respect of its design, it has been partly described already regarding its deeper sense. It represents also the perfection and end of the Cosmos, the secret which is within it, the rapture of the universe when it understands itself in God. It is further the state of the soul in the consciousness of Divine Vision, reflected from the self-knowing spirit. But these meanings are without prejudice to that which I have said concerning it on the material side. It has more than one message on the macrocosmic side and is, for example, the state of the restored world when the law of manifestation shall have been carried to the highest degree of natural perfection. But it is perhaps more especially a story of the past, referring to that day when all was declared to be good, when the morning stars sang together and all the Sons of God shouted for joy. One of the worst explanations concerning it is that the figure symbolizes the Magus when he has reached the highest degree of initiation; another account says that it represents the absolute, which is ridiculous. The figure has been said to stand for Truth, which is, however, more properly allocated to the seventeenth card. Lastly, it has been called the Crown of the Magi.",
 interpretation: "Assured success, recompense, voyage, route, emigration, flight, change of place. Reversed: Inertia, fixity, stagnation, permanence." }
 
-#minor aaraca
+numeralize = (x) ->
+  switch x
+    when 1 then return "ace"
+    when 2 then return "two"
+    when 3 then return "three"
+    when 4 then return "four"
+    when 5 then return "five"
+    when 6 then return "six"
+    when 7 then return "seven"
+    when 8 then return "eight"
+    when 9 then return "nine"
+    when 10 then return "ten"
+    when 11 then return "page"
+    when 12 then return "knight"
+    when 13 then return "queen"
+    when 14 then return "king"
 
+#minor aaraca
+for number in [1..14]
+  do (number) ->
+    image_string = if number < 10 then '0'+ number.toString() else number.toString()
+    Card.create { name: number, suite: "cups", image: 'deck/Cups'+image_string + '.jpg',
+    description: "test",
+    interpretation: "test" }
