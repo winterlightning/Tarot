@@ -332,8 +332,8 @@
       name: numeralize(number) + " of Cups",
       suite: "cups",
       image: 'deck/Cups' + image_string + '.jpg',
-      description: wands[number.toString() + "A"],
-      interpretation: wands[number.toString() + "B"]
+      description: cups[number.toString() + "A"],
+      interpretation: cups[number.toString() + "B"]
     });
   };
   for (number = 1; number <= 14; number++) {
@@ -346,8 +346,8 @@
       name: numeralize(number) + " of Wands",
       suite: "cups",
       image: 'deck/Wands' + image_string + '.jpg',
-      description: cups[number.toString() + "A"],
-      interpretation: cups[number.toString() + "B"]
+      description: wands[number.toString() + "A"],
+      interpretation: wands[number.toString() + "B"]
     });
   };
   for (number = 1; number <= 14; number++) {
@@ -371,7 +371,7 @@
     var image_string;
     image_string = number < 10 ? '0' + number.toString() : number.toString();
     return Card.create({
-      name: numeralize(number) + " of Pentacle",
+      name: numeralize(number) + " of Pentacles",
       suite: "pentacle",
       image: 'deck/Pents' + image_string + '.jpg',
       description: pentacles[number.toString() + "A"],
